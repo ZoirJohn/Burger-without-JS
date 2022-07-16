@@ -94,6 +94,9 @@ body,
 	text-align: center;
 	color: #003019;
 }
+.nav__link:active{
+	background: #003019;
+}
 .nav__link span {
 	position: relative;
 }
