@@ -1,0 +1,192 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+body,
+.wrapper {
+	width: 100%;
+	height: 100%;
+	font-family: 'Lobster';
+	font-size: 1rem;
+}
+
+.wrapper {
+	min-height: 100vh;
+	max-width: 375px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	position: relative;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0px auto;
+	height: 100%;
+	padding: 0 10px;
+}
+@font-face {
+	font-family: 'Lobster';
+	src: url('../fonts/Lobster-Regular.ttf');
+	font-style: normal;
+	font-weight: normal;
+}
+
+.header {
+	width: 100%;
+	background: linear-gradient(#008b4a 0%, #006134 100%);
+	height: 88px;
+}
+
+.header .row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.row__column {
+	flex: 0 1 49%;
+}
+
+.logo a {
+	font-size: 2rem;
+	color: #003019;
+}
+
+.navbar {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #f5f5f5;
+	left: 0;
+	top: 13.4%;
+}
+
+.nav {
+	width: 100%;
+	height: 100%;
+}
+
+.nav__list {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.nav__list li {
+	width: 100%;
+}
+.nav__link {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 10px 0px;
+	font-size: 1.7rem;
+	text-align: center;
+	color: #003019;
+}
+.nav__link span {
+	position: relative;
+}
+.nav__link span:hover::before {
+	width: 100%;
+}
+.nav__link span::before {
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 1px;
+	background: #003019;
+	bottom: -7px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transition: all 300ms ease-out;
+}
+
+.burger-menu {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.burger {
+	width: 30px;
+	height: 20px;
+}
+
+/* ! Open menu */
+.open {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.open span,
+.open::before,
+.open::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #003019;
+}
+.open span {
+	top: 45%;
+}
+.open::before {
+	top: 0;
+}
+.open::after {
+	bottom: 0;
+}
+#open:target .open {
+	display: none;
+}
+#open:target .close {
+	display: block;
+}
+
+/* ! Close menu */
+.close {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.close::before,
+.close::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #003019;
+}
+
+.close::before {
+	top: 45%;
+	transform: rotate(45deg);
+}
+
+.close::after {
+	top: 45%;
+	transform: rotate(-45deg);
+}
+
+#close:target .open {
+	display: block;
+}
+#close:target .close {
+	display: none;
+}
